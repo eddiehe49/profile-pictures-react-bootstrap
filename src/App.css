@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height        : 40vmin;
   pointer-events: none;
 }
 
@@ -15,13 +15,13 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height      : 100vh;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  justify-content : center;
+  font-size       : calc(10px + 2vmin);
+  color           : white;
 }
 
 .App-link {
@@ -32,7 +32,50 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.leftWords {
+  word-break     : normal;
+  white-space    : pre-warp;
+  word-wrap      : break-word;
+  padding-right  : 5%;
+  align-items    : right;
+  justify-content: right;
+  text-align     : right;
+  display        : flex;
+  margin         : 0 auto;
+  margin-top     : 20%;
+  vertical-align : middle;
+}
+
+.rightWords {
+  padding-left      : 5%;
+  align-items       : left;
+  justify-content   : left;
+  text-align        : left;
+  /* display        : flex; */
+  margin            : 0 auto;
+  margin-top        : 40%;
+  vertical-align    : middle;
+}
+
+.componentsDarkMode {
+  background-color: #282c34;
+  color           : white
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .arrow-clockwise {
+    animation: App-logo-spin infinite 1s linear;
+  }
+}
+
+.toastsDarkMode {
+  background-color: #343a40;
+  color           : white
 }
