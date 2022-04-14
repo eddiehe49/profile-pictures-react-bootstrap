@@ -16,10 +16,6 @@ function About(params) {
                     <a className="App-link" href="https://react-bootstrap.github.io/" target="_blank" rel="noopener noreferrer">
                         React-Bootstrap
                     </a>
-                    {/* &nbsp;<code>&</code>&nbsp;
-                    <a className="App-link" href="https://v5.bootcss.com/" target="_blank" rel="noopener noreferrer">
-                        Bootstrap
-                    </a> */}
                     &nbsp;<code>&</code>&nbsp;
                     <a className="App-link" href="http://jsonplaceholder.typicode.com/" target="_blank" rel="noopener noreferrer">
                         JSONPlaceholder
