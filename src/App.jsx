@@ -15,16 +15,17 @@ function App(params) {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <NavDropdown title="Avatar" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="/" disabled={useLocation().pathname === "/" ? "true" : null}>Avatar-React</NavDropdown.Item>
-                <NavDropdown.Item href="">Avatar-Vue</NavDropdown.Item>
+                <NavDropdown.Item href="/" disabled={useLocation().pathname === "/" ? "true" : null}>DarkMode</NavDropdown.Item>
+                <NavDropdown.Item href="https://eddiehe-avatars-lightmode.onrender.com/">LightMode</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="http://my-json-server.typicode.com/Eddie-He-090/avatar-json/" target="_blank" rel="noopener noreferrer">avatar-JSONPlaceholder</NavDropdown.Item>
+                <NavDropdown.Item href="https://my-json-server.typicode.com/eddiehe49/avatars-json/" target="_blank" rel="noopener noreferrer">avatars-JSONPlaceholder</NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Favicon" id="collasible-nav-dropdown" variant="dark">
-                <NavDropdown.Item href="">Favicon-React</NavDropdown.Item>
-                <NavDropdown.Item href="">Favicon-Vue</NavDropdown.Item>
+                <NavDropdown.Item href="https://eddiehe-favicons.vercel.app/">Auto</NavDropdown.Item>
+                <NavDropdown.Item href="https://eddiehe-favicons-darkmode.vercel.app/">DarkMode</NavDropdown.Item>
+                <NavDropdown.Item href="https://eddiehe-favicons-lightmode.onrender.com/">LightMode</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="">favicon-jsonplaceholder</NavDropdown.Item>
+                <NavDropdown.Item href="https://my-json-server.typicode.com/eddiehe49/favicons-json" target="_blank" rel="noopener noreferrer">favicons-JSONPlaceholder</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link to="/about" as={Link}>About</Nav.Link>
             </Nav>
