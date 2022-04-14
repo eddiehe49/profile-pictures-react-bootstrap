@@ -27,7 +27,7 @@ function App(params) {
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="https://my-json-server.typicode.com/eddiehe49/favicons-json" target="_blank" rel="noopener noreferrer">favicons-JSONPlaceholder</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link to="/about" as={Link}>About</Nav.Link>
+              <Nav.Link to="/about" as={Link} disabled={useLocation().pathname === "/about" ? "true" : null}>About</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

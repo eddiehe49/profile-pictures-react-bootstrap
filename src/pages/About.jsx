@@ -17,7 +17,7 @@ function About(params) {
                         React-Bootstrap
                     </a>
                     &nbsp;<code>&</code>&nbsp;
-                    <a className="App-link" href="http://jsonplaceholder.typicode.com/" target="_blank" rel="noopener noreferrer">
+                    <a className="App-link" href="https://jsonplaceholder.typicode.com/" target="_blank" rel="noopener noreferrer">
                         JSONPlaceholder
                     </a>
                     &nbsp;<code>&</code>&nbsp;
