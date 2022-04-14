@@ -20,19 +20,6 @@ function Home(params) {
     setIndex(selectedIndex)
   }
 
-  const confirmVarification = () => {
-    if (selectValue === "1") {
-      setSvgName("arrow-clockwise")
-      setModalShow(false)
-      patchJsonplaceholderAvatars()
-      // putJsonbinAvatars()
-      // putKratesAvatars()
-    }
-    else {
-      setWarningToastShow(true)
-    }
-  }
-
   const formSelectOnChange = (e) => {
     selectValue = e.target.value
   }
@@ -160,11 +147,24 @@ function Home(params) {
     });
   };
 
+  const confirmVarification = () => {
+    if (selectValue === "1") {
+      setSvgName("arrow-clockwise")
+      setModalShow(false)
+      // patchJsonplaceholderAvatars()
+      // putJsonbinAvatars()
+      putKratesAvatars()
+    }
+    else {
+      setWarningToastShow(true)
+    }
+  }
+
   useEffect(() => {
     setSvgName("arrow-clockwise")
-    getJsonplaceholderAvatars()
+    // getJsonplaceholderAvatars()
     // getJsonbinAvatars()
-    // getKratesAvatars()
+    getKratesAvatars()
   }, [])
 
 
