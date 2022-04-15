@@ -171,9 +171,9 @@ function Home(params) {
   return (
     < div className="App" >
       <header className="App-header">
-        <div className="container-fluid" style={{ paddingTop: "5%" }}>
+        <div className="container-fluid" style={{ marginTop: "5%" }}>
           <div style={{ width: "38%", height: "50%", float: "left", }}>
-            <p className="leftWords" style={{ fontSize: "calc(20% + 2vmin)" }}>
+            <p className="leftWords">
               {localAvatars ? localAvatars[index].words : null}
             </p>
           </div>
@@ -194,12 +194,12 @@ function Home(params) {
             </Carousel>
           </div>
           <div style={{ width: "38%", height: "50%", float: "left", }}>
-            <p className="rightWords" style={{ textAlign: "left", fontSize: "calc(20% + 2vmin)" }}>
-              <code style={{ fontSize: "calc(20% + 2vmin)" }}>{localAvatars ? localAvatars[index].likes : null}</code> folks like this avatar.
+            <p className="rightWords">
+              <code>{localAvatars ? localAvatars[index].likes : null}</code> folks like this avatar.
             </p>
           </div>
         </div>
-        <div className="container-fluid" style={{ paddingTop: "5%", clear: "both" }}>
+        <div className="container-fluid" style={{ marginTop: "5%", clear: "both" }}>
           {svgName === "heart" ? showHeartSvg() : null}
           {svgName === "heart-fill" ? <svg xmlns="http://www.w3.org/2000/svg" width="3%" height="3%" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
             <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
