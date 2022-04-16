@@ -173,9 +173,8 @@ function Home(params) {
       <header className="App-header">
         <div className="container-fluid" style={{ marginTop: "5%" }}>
           <div style={{ width: "38%", height: "50%", float: "left", }}>
-            <p className="leftWords">
-              {localAvatars ? localAvatars[index].words : null}
-            </p>
+            {localAvatars ? <p className="leftWords" dangerouslySetInnerHTML={{ __html: localAvatars[index].words }}>
+            </p> : <p className="leftWords"><strong>Hold on please.</strong></p>}
           </div>
           <div style={{ width: "24%", float: "left", }}>
             <Carousel activeIndex={index} onSelect={handleSelect} variant={index === 0 || index === 1 || index === 2 ? "null" : "dark"} interval={null}>
@@ -194,9 +193,8 @@ function Home(params) {
             </Carousel>
           </div>
           <div style={{ width: "38%", height: "50%", float: "left", }}>
-            <p className="rightWords">
-              <code>{localAvatars ? localAvatars[index].likes : null}</code> folks like this avatar.
-            </p>
+            {localAvatars ? <p className="rightWords"><code>{localAvatars[index].likes}</code> folks like this avatar.
+            </p> : <p className="rightWords"><strong>...</strong></p>}
           </div>
         </div>
         <div className="container-fluid" style={{ marginTop: "5%", clear: "both" }}>
