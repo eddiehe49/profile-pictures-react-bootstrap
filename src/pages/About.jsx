@@ -8,6 +8,15 @@ function About(params) {
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
+                    <strong>What are avatars?</strong>
+                    <br />
+                    Check out this <a href="https://web.okjike.com/u/60001f57-6fec-4ad1-963b-51ebdf913f8c" target="_blank" rel="noopener noreferrer" style={{ color: "#0d6efd" }}>
+                        site
+                    </a> on your desktop browser.
+                    <br />
+                    Do you see the round picture in the top-left corner of every post? That's my avatar!
+                </p>
+                <p>
                     Powerd by&nbsp;
                     <a className="App-link" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
                         React
