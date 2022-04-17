@@ -9,7 +9,7 @@ const jsonplaceholderApiClient = axios.create({
     }
 })
 const jsonbinApiClient = axios.create({
-    baseURL: "https://api.jsonbin.io/v3/b/624173ee0618276743817ab6",
+    baseURL: "https://api.jsonbin.io/v3/b/" + process.env.REACT_APP_BIN_ID,
     withCredentials: false,
     headers: {
         "X-Master-Key": "$2b$10$Dr3C03m96HY3V014" + process.env.REACT_APP_X_Master_Key,
@@ -18,7 +18,7 @@ const jsonbinApiClient = axios.create({
     }
 })
 const kratesApiClient = axios.create({
-    baseURL: "https://krat.es/908f435af83b640b336f",
+    baseURL: "https://krat.es/" + process.env.REACT_APP_Krate_ID,
     withCredentials: false,
     headers: {
         "x-api-key": process.env.REACT_APP_x_api_key,
