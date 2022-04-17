@@ -165,6 +165,7 @@ function Home(params) {
     // getJsonplaceholderAvatars()
     // getJsonbinAvatars()
     getKratesAvatars()
+
   }, [])
 
 
