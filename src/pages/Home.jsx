@@ -235,13 +235,13 @@ function Home(params) {
             <Toast.Header className="toastsDarkMode">
               <strong className="me-auto" style={{ color: "#ffc107" }}>Warning</strong>
             </Toast.Header>
-            <Toast.Body>The varification code is wrong!</Toast.Body>
+            <Toast.Body>Wrong varification code!</Toast.Body>
           </Toast>
           <Toast onClose={() => setSuccessToastShow(false)} show={successToastShow} delay={3000} autohide className="toastsDarkMode">
             <Toast.Header className="toastsDarkMode">
               <strong className="me-auto" style={{ color: "#28a745" }}>Success</strong>
             </Toast.Header>
-            <Toast.Body>Thank you for your vote!</Toast.Body>
+            <Toast.Body>Thanks for your thumbs up!</Toast.Body>
           </Toast>
           <Toast onClose={() => setErrorToastShow(false)} show={errorToastShow} delay={3000} autohide className="toastsDarkMode">
             <Toast.Header className="toastsDarkMode">
