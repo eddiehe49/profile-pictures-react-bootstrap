@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import '../App.css';
 import { Carousel, Button, Modal, FloatingLabel, Form, Toast, ToastContainer, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Service from '../services/Service.js';
+import waline from '../services/Waline.js';
 
 
 function Home(params) {
@@ -165,7 +166,7 @@ function Home(params) {
     // getJsonplaceholderAvatars()
     // getJsonbinAvatars()
     getKratesAvatars()
-
+    waline.update()
   }, [])
 
 

@@ -1,8 +1,13 @@
 import React from "react";
 import '../App.css';
-import logo from "../logo.svg"
+import logo from "../logo.svg";
+import { useEffect } from "react";
+import waline from '../services/Waline.js';
 
 function About(params) {
+    useEffect(() => {
+        waline.update()
+    }, [])
     return (
         <div className="App">
             <header className="App-header">

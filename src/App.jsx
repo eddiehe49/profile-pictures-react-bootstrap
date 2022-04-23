@@ -15,7 +15,7 @@ function App(params) {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <NavDropdown title="Avatar" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="/" disabled={useLocation().pathname === "/" ? "true" : null}>DarkMode</NavDropdown.Item>
+                <NavDropdown.Item href="/" disabled={useLocation().pathname === "/" ? true : null}>DarkMode</NavDropdown.Item>
                 <NavDropdown.Item href="https://eddiehe-avatars-lightmode.onrender.com/" rel="noopener noreferrer">LightMode</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="https://my-json-server.typicode.com/eddiehe49/avatars-json/" target="_blank" rel="noopener noreferrer">avatars-JSONPlaceholder</NavDropdown.Item>
@@ -27,7 +27,7 @@ function App(params) {
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="https://my-json-server.typicode.com/eddiehe49/favicons-json" target="_blank" rel="noopener noreferrer">favicons-JSONPlaceholder</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link to="/about" as={Link} disabled={useLocation().pathname === "/about" ? "true" : null}>About</Nav.Link>
+              <Nav.Link to="/about" as={Link} disabled={useLocation().pathname === "/about" ? true : null}>About</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
