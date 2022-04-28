@@ -45,14 +45,14 @@ function Home(params) {
   const getJsonplaceholderAvatars = () => {
     const getAvatars = async () => {
       let result = await Service.getJsonplaceholderAvatarsJson()
-      console.log("get jsonplaceholder result =", result);
+      console.log("get jsonplaceholder result: ", result);
       setLocalAvatars(result.data)
       setSvgName("heart")
-      console.log("localAvatars =", localAvatars)
+      console.log("localAvatars: ", localAvatars)
     }
     getAvatars().catch((error) => {
       setErrorToastShow(true)
-      console.log("get jsonplaceholder error =", error)
+      console.log("get jsonplaceholder error: ", error)
     });
   };
 
@@ -61,7 +61,7 @@ function Home(params) {
       let result = await Service.patchJsonplaceholderAvatarsJson(index, {
         likes: localAvatars[index].likes + 1,
       })
-      console.log("patch jsonplaceholder result =", result);
+      console.log("patch jsonplaceholder result: ", result);
       localAvatars[index].likes += 1
       setSvgName("heart-fill")
       setSuccessToastShow(true)
@@ -72,21 +72,21 @@ function Home(params) {
     }
     patchAvatars().catch((error) => {
       setErrorToastShow(true)
-      console.log("patch jsonplaceholder error =", error)
+      console.log("patch jsonplaceholder error: ", error)
     });
   };
 
   const getJsonbinAvatars = () => {
     const getAvatars = async () => {
       let result = await Service.getJsonbinAvatarsJson()
-      console.log("get jsonbin res =", result);
+      console.log("get jsonbin res: ", result);
       setLocalAvatars(result.data.record.avatars)
       setSvgName("heart")
-      console.log("localAvatars =", localAvatars)
+      console.log("localAvatars: ", localAvatars)
     }
     getAvatars().catch((error) => {
       setErrorToastShow(true)
-      console.log("get jsonbin error =", error)
+      console.log("get jsonbin error: ", error)
     });
   };
 
@@ -97,7 +97,7 @@ function Home(params) {
     avatars[index].likes += 1;
     const putAvatars = async () => {
       let result = await Service.putJsonbinAvatarsJson({ avatars })
-      console.log("put jsonbin result =", result)
+      console.log("put jsonbin result: ", result)
       localAvatars[index].likes += 1
       setSvgName("heart-fill")
       setSuccessToastShow(true)
@@ -108,21 +108,21 @@ function Home(params) {
     }
     putAvatars().catch((error) => {
       setErrorToastShow(true)
-      console.log("put jsonbin error =", error)
+      console.log("put jsonbin error: ", error)
     });
   };
 
   const getKratesAvatars = () => {
     const getAvatars = async () => {
       let result = await Service.getKratesAvatarsJson()
-      console.log("get krates result =", result);
+      console.log("get krates result: ", result);
       setLocalAvatars(result.data[0].avatars)
       setSvgName("heart")
-      console.log("localAvatars =", localAvatars)
+      console.log("localAvatars: ", localAvatars)
     }
     getAvatars().catch((error) => {
       setErrorToastShow(true)
-      console.log("get krates error =", error)
+      console.log("get krates error: ", error)
     });
   };
 
@@ -133,7 +133,7 @@ function Home(params) {
     avatars[index].likes += 1;
     const putAvatars = async () => {
       let result = await Service.putKratesAvatarsJson({ avatars })
-      console.log("put krates result =", result)
+      console.log("put krates result: ", result)
       localAvatars[index].likes += 1
       setSvgName("heart-fill")
       setSuccessToastShow(true)
@@ -144,7 +144,7 @@ function Home(params) {
     }
     putAvatars().catch((error) => {
       setErrorToastShow(true)
-      console.log("put krates error =", error)
+      console.log("put krates error: ", error)
     });
   };
 
@@ -173,8 +173,8 @@ function Home(params) {
   return (
     < div className="App" >
       <header className="App-header">
-        <div className="container-fluid" style={{ marginTop: "5%" }}>
-          <div style={{ width: "38%", height: "50%", float: "left", }}>
+        <div className="container-fluid" style={{ paddingTop: "5%" }}>
+          <div style={{ width: "38%", float: "left", }}>
             {localAvatars ? <p className="leftWords" dangerouslySetInnerHTML={{ __html: localAvatars[index].words }}>
             </p> : <p className="leftWords"><strong>Hold on please.</strong></p>}
           </div>
@@ -194,12 +194,12 @@ function Home(params) {
               }) : null}
             </Carousel>
           </div>
-          <div style={{ width: "38%", height: "50%", float: "left", }}>
+          <div style={{ width: "38%", float: "left", }}>
             {localAvatars ? <p className="rightWords"><code>{localAvatars[index].likes}</code> folks like this avatar.
             </p> : <p className="rightWords"><strong>...</strong></p>}
           </div>
         </div>
-        <div className="container-fluid" style={{ marginTop: "5%", clear: "both" }}>
+        <div className="container-fluid" style={{ paddingTop: "5%", clear: "both" }}>
           {svgName === "heart" ? showHeartSvg() : null}
           {svgName === "heart-fill" ? <svg xmlns="http://www.w3.org/2000/svg" width="3%" height="3%" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
             <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
