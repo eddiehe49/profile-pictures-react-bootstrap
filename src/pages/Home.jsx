@@ -180,13 +180,13 @@ function Home(params) {
           </div>
           <div style={{ width: "24%", float: "left", }}>
             <Carousel activeIndex={index} onSelect={handleSelect} variant={index === 0 || index === 1 || index === 2 ? "null" : "dark"} interval={null}>
-              {localProfilePictures ? localProfilePictures.map((avatar) => {
+              {localProfilePictures ? localProfilePictures.map((localProfilePicture) => {
                 return (
-                  <Carousel.Item key={avatar.id}>
+                  <Carousel.Item key={localProfilePicture.id}>
                     <img
                       className="d-block w-100"
-                      src={avatar.src}
-                      // src={require("./asserts/" + avatar.src)}
+                      src={localProfilePicture.src}
+                      // src={require("./asserts/" + localProfilePicture.src)}
                       alt="First slide"
                     />
                   </Carousel.Item>
