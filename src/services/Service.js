@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const jsonplaceholderApiClient = axios.create({
-    baseURL: 'https://my-json-server.typicode.com/eddiehe49/avatars',
+    baseURL: 'https://my-json-server.typicode.com/eddiehe49/profile-pictures',
     withCredentials: false,
     headers: {
         Accept: 'application/json',
@@ -27,25 +27,25 @@ const kratesApiClient = axios.create({
     }
 })
 
-const getJsonplaceholderAvatarsJson = () => {
-    return jsonplaceholderApiClient.get('/avatars')
+const getJsonplaceholderProfilePicturesJson = () => {
+    return jsonplaceholderApiClient.get('/profilePictures')
 }
-const patchJsonplaceholderAvatarsJson = (id, avatars) => {
-    return jsonplaceholderApiClient.patch('/avatars/' + id, avatars)
+const patchJsonplaceholderProfilePicturesJson = (id, profilePictures) => {
+    return jsonplaceholderApiClient.patch('/profilePictures/' + id, profilePictures)
 }
-const getJsonbinAvatarsJson = () => {
+const getJsonbinProfilePicturesJson = () => {
     return jsonbinApiClient.get('/latest')
 }
-const putJsonbinAvatarsJson = (avatars) => {
-    return jsonbinApiClient.put('', avatars)
+const putJsonbinProfilePicturesJson = (profilePictures) => {
+    return jsonbinApiClient.put('', profilePictures)
 }
-const getKratesAvatarsJson = () => {
+const getKratesProfilePicturesJson = () => {
     return kratesApiClient.get("/record/624c33c65a015dc4d2223b6e")
 }
-const putKratesAvatarsJson = (avatars) => {
-    return kratesApiClient.put('/624c33c65a015dc4d2223b6e', avatars)
+const putKratesProfilePicturesJson = (profilePictures) => {
+    return kratesApiClient.put('/624c33c65a015dc4d2223b6e', profilePictures)
 };
 
-const Service = { getJsonplaceholderAvatarsJson, patchJsonplaceholderAvatarsJson, getJsonbinAvatarsJson, putJsonbinAvatarsJson, getKratesAvatarsJson, putKratesAvatarsJson }
+const Service = { getJsonplaceholderProfilePicturesJson, patchJsonplaceholderProfilePicturesJson, getJsonbinProfilePicturesJson, putJsonbinProfilePicturesJson, getKratesProfilePicturesJson, putKratesProfilePicturesJson }
 
 export default Service;

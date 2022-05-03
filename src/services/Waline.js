@@ -4,7 +4,7 @@ const locale = {
 }
 const waline = Waline({
     el: '#waline',
-    serverURL: 'https://eddiehe-avatars-waline.vercel.app',
+    serverURL: 'https://eddiehe-profile-pictures-waline.vercel.app',
     dark: 'auto',
     lang: 'en',
     locale,

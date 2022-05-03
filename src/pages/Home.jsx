@@ -7,7 +7,7 @@ import waline from '../services/Waline.js';
 
 
 function Home(params) {
-  const [localAvatars, setLocalAvatars] = useState()
+  const [localProfilePictures, setLocalProfilePictures] = useState()
   const [svgName, setSvgName] = useState("heart")
   const [index, setIndex] = useState(0)
   const [warningToastShow, setWarningToastShow] = useState(false);
@@ -42,27 +42,27 @@ function Home(params) {
     )
   }
 
-  const getJsonplaceholderAvatars = () => {
-    const getAvatars = async () => {
-      let result = await Service.getJsonplaceholderAvatarsJson()
+  const getJsonplaceholderProfilePictures = () => {
+    const getProfilePictures = async () => {
+      let result = await Service.getJsonplaceholderProfilePicturesJson()
       console.log("get jsonplaceholder result: ", result);
-      setLocalAvatars(result.data)
+      setLocalProfilePictures(result.data)
       setSvgName("heart")
-      console.log("localAvatars: ", localAvatars)
+      console.log("localProfilePictures: ", localProfilePictures)
     }
-    getAvatars().catch((error) => {
+    getProfilePictures().catch((error) => {
       setErrorToastShow(true)
       console.log("get jsonplaceholder error: ", error)
     });
   };
 
-  const patchJsonplaceholderAvatars = () => {
-    const patchAvatars = async () => {
-      let result = await Service.patchJsonplaceholderAvatarsJson(index, {
-        likes: localAvatars[index].likes + 1,
+  const patchJsonplaceholderProfilePictures = () => {
+    const patchProfilePictures = async () => {
+      let result = await Service.patchJsonplaceholderProfilePicturesJson(index, {
+        likes: localProfilePictures[index].likes + 1,
       })
       console.log("patch jsonplaceholder result: ", result);
-      localAvatars[index].likes += 1
+      localProfilePictures[index].likes += 1
       setSvgName("heart-fill")
       setSuccessToastShow(true)
       setTimeout(() => {
@@ -70,35 +70,35 @@ function Home(params) {
         console.log("2.5 s passed. Change heart-fill to heart.")
       }, 2500);
     }
-    patchAvatars().catch((error) => {
+    patchProfilePictures().catch((error) => {
       setErrorToastShow(true)
       console.log("patch jsonplaceholder error: ", error)
     });
   };
 
-  const getJsonbinAvatars = () => {
-    const getAvatars = async () => {
-      let result = await Service.getJsonbinAvatarsJson()
+  const getJsonbinProfilePictures = () => {
+    const getProfilePictures = async () => {
+      let result = await Service.getJsonbinProfilePicturesJson()
       console.log("get jsonbin res: ", result);
-      setLocalAvatars(result.data.record.avatars)
+      setLocalProfilePictures(result.data.record.profilePictures)
       setSvgName("heart")
-      console.log("localAvatars: ", localAvatars)
+      console.log("localProfilePictures: ", localProfilePictures)
     }
-    getAvatars().catch((error) => {
+    getProfilePictures().catch((error) => {
       setErrorToastShow(true)
       console.log("get jsonbin error: ", error)
     });
   };
 
-  const putJsonbinAvatars = () => {
-    // Coould not do (let tempAvatars=this.localAvatars), as tempAvatars will sync with this.localAvatars
-    let tempAvatars = JSON.stringify(localAvatars);
-    let avatars = JSON.parse(tempAvatars);
-    avatars[index].likes += 1;
-    const putAvatars = async () => {
-      let result = await Service.putJsonbinAvatarsJson({ avatars })
+  const putJsonbinProfilePictures = () => {
+    // Coould not do (let tempProfilePictures=this.localProfilePictures), as tempProfilePictures will sync with this.localProfilePictures
+    let tempProfilePictures = JSON.stringify(localProfilePictures);
+    let profilePictures = JSON.parse(tempProfilePictures);
+    profilePictures[index].likes += 1;
+    const putProfilePictures = async () => {
+      let result = await Service.putJsonbinProfilePicturesJson({ profilePictures })
       console.log("put jsonbin result: ", result)
-      localAvatars[index].likes += 1
+      localProfilePictures[index].likes += 1
       setSvgName("heart-fill")
       setSuccessToastShow(true)
       setTimeout(() => {
@@ -106,35 +106,35 @@ function Home(params) {
         console.log("2.5 s passed. Change heart-fill to heart.")
       }, 2500);
     }
-    putAvatars().catch((error) => {
+    putProfilePictures().catch((error) => {
       setErrorToastShow(true)
       console.log("put jsonbin error: ", error)
     });
   };
 
-  const getKratesAvatars = () => {
-    const getAvatars = async () => {
-      let result = await Service.getKratesAvatarsJson()
+  const getKratesProfilePictures = () => {
+    const getProfilePictures = async () => {
+      let result = await Service.getKratesProfilePicturesJson()
       console.log("get krates result: ", result);
-      setLocalAvatars(result.data[0].avatars)
+      setLocalProfilePictures(result.data[0].avatars)
       setSvgName("heart")
-      console.log("localAvatars: ", localAvatars)
+      console.log("localProfilePictures: ", localProfilePictures)
     }
-    getAvatars().catch((error) => {
+    getProfilePictures().catch((error) => {
       setErrorToastShow(true)
       console.log("get krates error: ", error)
     });
   };
 
-  const putKratesAvatars = () => {
-    // Coould not do (let tempAvatars=this.localAvatars), as tempAvatars will sync with this.localAvatars
-    let tempAvatars = JSON.stringify(localAvatars);
-    let avatars = JSON.parse(tempAvatars);
-    avatars[index].likes += 1;
-    const putAvatars = async () => {
-      let result = await Service.putKratesAvatarsJson({ avatars })
+  const putKratesProfilePictures = () => {
+    // Coould not do (let tempProfilePictures=this.localProfilePictures), as tempProfilePictures will sync with this.localProfilePictures
+    let tempProfilePictures = JSON.stringify(localProfilePictures);
+    let profilePictures = JSON.parse(tempProfilePictures);
+    profilePictures[index].likes += 1;
+    const putProfilePictures = async () => {
+      let result = await Service.putKratesProfilePicturesJson({ profilePictures })
       console.log("put krates result: ", result)
-      localAvatars[index].likes += 1
+      localProfilePictures[index].likes += 1
       setSvgName("heart-fill")
       setSuccessToastShow(true)
       setTimeout(() => {
@@ -142,7 +142,7 @@ function Home(params) {
         console.log("2.5 s passed. Change heart-fill to heart.")
       }, 2500);
     }
-    putAvatars().catch((error) => {
+    putProfilePictures().catch((error) => {
       setErrorToastShow(true)
       console.log("put krates error: ", error)
     });
@@ -152,9 +152,9 @@ function Home(params) {
     if (selectValue === "1") {
       setSvgName("arrow-clockwise")
       setModalShow(false)
-      // patchJsonplaceholderAvatars()
-      // putJsonbinAvatars()
-      putKratesAvatars()
+      // patchJsonplaceholderProfilePictures()
+      // putJsonbinProfilePictures()
+      putKratesProfilePictures()
     }
     else {
       setWarningToastShow(true)
@@ -163,9 +163,9 @@ function Home(params) {
 
   useEffect(() => {
     setSvgName("arrow-clockwise")
-    // getJsonplaceholderAvatars()
-    // getJsonbinAvatars()
-    getKratesAvatars()
+    // getJsonplaceholderProfilePictures()
+    // getJsonbinProfilePictures()
+    getKratesProfilePictures()
     waline.update()
   }, [])
 
@@ -175,12 +175,12 @@ function Home(params) {
       <header className="App-header">
         <div className="container-fluid" style={{ paddingTop: "5%" }}>
           <div style={{ width: "38%", float: "left", }}>
-            {localAvatars ? <p className="leftWords" dangerouslySetInnerHTML={{ __html: localAvatars[index].words }}>
+            {localProfilePictures ? <p className="leftWords" dangerouslySetInnerHTML={{ __html: localProfilePictures[index].words }}>
             </p> : <p className="leftWords"><strong>Hold on please.</strong></p>}
           </div>
           <div style={{ width: "24%", float: "left", }}>
             <Carousel activeIndex={index} onSelect={handleSelect} variant={index === 0 || index === 1 || index === 2 ? "null" : "dark"} interval={null}>
-              {localAvatars ? localAvatars.map((avatar) => {
+              {localProfilePictures ? localProfilePictures.map((avatar) => {
                 return (
                   <Carousel.Item key={avatar.id}>
                     <img
@@ -195,7 +195,7 @@ function Home(params) {
             </Carousel>
           </div>
           <div style={{ width: "38%", float: "left", }}>
-            {localAvatars ? <p className="rightWords"><code>{localAvatars[index].likes}</code> folks like this avatar.
+            {localProfilePictures ? <p className="rightWords"><code>{localProfilePictures[index].likes}</code> folks like this avatar.
             </p> : <p className="rightWords"><strong>...</strong></p>}
           </div>
         </div>
