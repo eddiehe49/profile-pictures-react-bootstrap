@@ -40,8 +40,8 @@
 
 
 .leftWords {
-  justify-content: right;
-  text-align     : right;
+  justify-content: left;
+  text-align     : left;
   margin         : 20% 5% 0 15%;
   vertical-align : middle;
 }

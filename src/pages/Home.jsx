@@ -116,7 +116,7 @@ function Home(params) {
     const getProfilePictures = async () => {
       let result = await Service.getKratesProfilePicturesJson()
       console.log("get krates result: ", result);
-      setLocalProfilePictures(result.data[0].avatars)
+      setLocalProfilePictures(result.data[0].profilePictures)
       setSvgName("heart")
       console.log("localProfilePictures: ", localProfilePictures)
     }
