@@ -14,7 +14,7 @@ function App(params) {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <NavDropdown title="Avatar" id="collasible-nav-dropdown">
+              <NavDropdown title="Profile Pictures" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="/" disabled={useLocation().pathname === "/" ? true : null}>DarkMode</NavDropdown.Item>
                 <NavDropdown.Item href="https://eddiehe-profile-pictures-lightmode.onrender.com/" rel="noopener noreferrer">LightMode</NavDropdown.Item>
                 <NavDropdown.Divider />

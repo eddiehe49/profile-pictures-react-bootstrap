@@ -37,7 +37,7 @@ function About(params) {
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <OffCanvasExample placement={"bottom"} name={"bottom"} />
+                {/* <OffCanvasExample placement={"bottom"} name={"bottom"} /> */}
                 <p style={{ padding: "5% 0 0 0" }}>
                     Powerd by&nbsp;
                     <a className="App-link" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
@@ -52,8 +52,8 @@ function About(params) {
                         JSONPlaceholder
                     </a>
                     &nbsp;<code>&</code>&nbsp;
-                    <a className="App-link" href="https://jsonbin.io/" target="_blank" rel="noopener noreferrer">
-                        JSONBIN
+                    <a className="App-link" href="https://krat.es/" target="_blank" rel="noopener noreferrer">
+                        Krates
                     </a>
                     &nbsp;<code>&</code>&nbsp;
                     <a className="App-link" href="https://vercel.com/" target="_blank" rel="noopener noreferrer">

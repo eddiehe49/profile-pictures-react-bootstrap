@@ -180,7 +180,7 @@ function Home(params) {
           </Modal.Header>
           <div className="componentsDarkMode">
             <ul>
-              <li>There is a like button.<br />Give your preferred favicon a thumb up!</li>
+              <li>There is a like button.<br />Give your preferred picture a thumb up!</li>
               <br />
               <li>Scroll down!<br />Have fun in the comment section.</li>
             </ul>
