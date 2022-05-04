@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import '../App.css';
-import { Carousel, Button, Modal, FloatingLabel, Form, Toast, ToastContainer, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Carousel, Button, Modal, FloatingLabel, Form, Toast, ToastContainer, OverlayTrigger, Tooltip, ListGroup } from 'react-bootstrap';
 import Service from '../services/Service.js';
 import waline from '../services/Waline.js';
 
@@ -13,7 +13,8 @@ function Home(params) {
   const [warningToastShow, setWarningToastShow] = useState(false);
   const [successToastShow, setSuccessToastShow] = useState(false);
   const [errorToastShow, setErrorToastShow] = useState(false);
-  const [modalShow, setModalShow] = useState(false);
+  const [verificationModalShow, setVerificationModalShow] = useState(false);
+  const [tipsModalShow, setTipsModalShow] = useState(true);
 
   let selectValue = "0"
 
@@ -35,7 +36,7 @@ function Home(params) {
           </Tooltip>
         }
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="3%" height="3%" fill="currentColor" className="bi bi-heart" viewBox="0 0 16 16" onClick={() => { setModalShow(true) }} style={{ cursor: "pointer" }}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="3%" height="3%" fill="currentColor" className="bi bi-heart" viewBox="0 0 16 16" onClick={() => { setVerificationModalShow(true) }} style={{ cursor: "pointer" }}>
           <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
         </svg>
       </OverlayTrigger>
@@ -151,7 +152,7 @@ function Home(params) {
   const confirmVarification = () => {
     if (selectValue === "1") {
       setSvgName("arrow-clockwise")
-      setModalShow(false)
+      setVerificationModalShow(false)
       // patchJsonplaceholderProfilePictures()
       // putJsonbinProfilePictures()
       putKratesProfilePictures()
@@ -173,6 +174,23 @@ function Home(params) {
   return (
     < div className="App" >
       <header className="App-header">
+        <Modal show={tipsModalShow} onHide={() => { setTipsModalShow(false) }} centered>
+          <Modal.Header className="componentsDarkMode">
+            <Modal.Title>Tips</Modal.Title>
+          </Modal.Header>
+          <div className="componentsDarkMode">
+            <ul>
+              <li>There is a like button.<br />Give your preferred favicon a thumb up!</li>
+              <br />
+              <li>Scroll down!<br />Have fun in the comment section.</li>
+            </ul>
+          </div>
+          <Modal.Footer className="componentsDarkMode">
+            <Button variant="primary" onClick={() => { setTipsModalShow(false) }}>
+              OK
+            </Button>
+          </Modal.Footer>
+        </Modal>
         <div className="container-fluid" style={{ paddingTop: "5%" }}>
           <div style={{ width: "38%", float: "left", }}>
             {localProfilePictures ? <p className="leftWords" dangerouslySetInnerHTML={{ __html: localProfilePictures[index].words }}>
@@ -209,8 +227,8 @@ function Home(params) {
             <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
           </svg> : null}
         </div>
-        <Modal show={modalShow} onHide={() => { setModalShow(false) }} centered>
-          <Modal.Header closeButton className="componentsDarkMode">
+        <Modal show={verificationModalShow} onHide={() => { setVerificationModalShow(false) }} centered>
+          <Modal.Header className="componentsDarkMode">
             <Modal.Title>Verification</Modal.Title>
           </Modal.Header>
           <FloatingLabel controlId="floatingSelect" label="lg10 = ?" className="componentsDarkMode">
@@ -222,7 +240,7 @@ function Home(params) {
             </Form.Select>
           </FloatingLabel>
           <Modal.Footer className="componentsDarkMode">
-            <Button variant="secondary" onClick={() => { setModalShow(false) }}>
+            <Button variant="secondary" onClick={() => { setVerificationModalShow(false) }}>
               Close
             </Button>
             <Button variant="primary" onClick={confirmVarification}>
