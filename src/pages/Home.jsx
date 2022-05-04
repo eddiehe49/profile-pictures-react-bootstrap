@@ -180,9 +180,9 @@ function Home(params) {
           </Modal.Header>
           <div className="componentsDarkMode">
             <ul>
-              <li>There is a like button.<br />Give your preferred picture a thumb up!</li>
+              <li><span style={{ fontSize: "medium", fontWeight: "bold" }}>There is a like button.</span><br />Give your preferred picture a thumb up!</li>
               <br />
-              <li>Scroll down!<br />Have fun in the comment section.</li>
+              <li><span style={{ fontSize: "medium", fontWeight: "bold" }}>Scroll down!</span><br />Have fun in the comment section.</li>
             </ul>
           </div>
           <Modal.Footer className="componentsDarkMode">
