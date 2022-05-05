@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import '../App.css';
-import { Carousel, Button, Modal, FloatingLabel, Form, Toast, ToastContainer, OverlayTrigger, Tooltip, ListGroup } from 'react-bootstrap';
+import { Carousel, Button, Modal, FloatingLabel, Form, Toast, ToastContainer, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Service from '../services/Service.js';
 import waline from '../services/Waline.js';
 
@@ -14,7 +14,6 @@ function Home(params) {
   const [successToastShow, setSuccessToastShow] = useState(false);
   const [errorToastShow, setErrorToastShow] = useState(false);
   const [verificationModalShow, setVerificationModalShow] = useState(false);
-  const [tipsModalShow, setTipsModalShow] = useState(true);
 
   let selectValue = "0"
 
@@ -174,23 +173,6 @@ function Home(params) {
   return (
     < div className="App" >
       <header className="App-header">
-        <Modal show={tipsModalShow} onHide={() => { setTipsModalShow(false) }} centered>
-          <Modal.Header className="componentsDarkMode">
-            <Modal.Title>Tips</Modal.Title>
-          </Modal.Header>
-          <div className="componentsDarkMode">
-            <ul>
-              <li><span style={{ fontSize: "medium", fontWeight: "bold" }}>There is a like button.</span><br />Give your preferred picture a thumb up!</li>
-              <br />
-              <li><span style={{ fontSize: "medium", fontWeight: "bold" }}>Scroll down!</span><br />Have fun in the comment section.</li>
-            </ul>
-          </div>
-          <Modal.Footer className="componentsDarkMode">
-            <Button variant="primary" onClick={() => { setTipsModalShow(false) }}>
-              OK
-            </Button>
-          </Modal.Footer>
-        </Modal>
         <div className="container-fluid" style={{ paddingTop: "5%" }}>
           <div style={{ width: "38%", float: "left", }}>
             {localProfilePictures ? <p className="leftWords" dangerouslySetInnerHTML={{ __html: localProfilePictures[index].words }}>

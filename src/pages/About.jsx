@@ -1,9 +1,11 @@
 import React from "react";
 import '../App.css';
 import logo from "../logo.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import waline from '../services/Waline.js';
 import { Button, Offcanvas } from 'react-bootstrap';
+import { tipsModal } from "../App";
+
 
 function OffCanvasExample({ name, ...props }) {
     const [offcanvasShow, setOffcanvasShow] = useState(false);
@@ -29,7 +31,9 @@ function OffCanvasExample({ name, ...props }) {
         </div>
     );
 }
+
 function About(params) {
+    const { setTipsModalShow } = useContext(tipsModal)
     useEffect(() => {
         waline.update()
     }, [])
@@ -38,6 +42,9 @@ function About(params) {
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 {/* <OffCanvasExample placement={"bottom"} name={"bottom"} /> */}
+                <Button variant="primary" onClick={() => { setTipsModalShow(true) }} className="me-2" style={{ margin: "2% 0 0 0" }}>
+                    Tips
+                </Button>
                 <p style={{ padding: "5% 0 0 0" }}>
                     Powerd by&nbsp;
                     <a className="App-link" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
