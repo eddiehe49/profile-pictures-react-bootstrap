@@ -39,6 +39,6 @@
     ]
   },
   "devDependencies": {
-    "@waline/client": "^2.2.0"
+    "@waline/client": "^2.3.2"
   }
 }
