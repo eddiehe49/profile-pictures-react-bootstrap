@@ -18,7 +18,6 @@ function About(params) {
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                {/* <OffCanvasExample placement={"bottom"} name={"bottom"} /> */}
                 <Button variant="primary" onClick={() => { setTipsModalShow(true) }} className="me-2" style={{ margin: "2% 0 0 0" }}>
                     Tips
                 </Button>
