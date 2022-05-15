@@ -22,7 +22,7 @@ function About(params) {
                     Tips
                 </Button>
                 <p style={{ padding: "5% 0 0 0" }}>
-                    Powerd by&nbsp;
+                    Powered by&nbsp;
                     <a className="App-link" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
                         React
                     </a>
