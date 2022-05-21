@@ -1,16 +1,8 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import { createRoot } from "react-dom/client";
 import './index.css';
 import Router from './Router.jsx';
 import reportWebVitals from './reportWebVitals';
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Router />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
 
 const root = createRoot(document.getElementById('root'))
 root.render(

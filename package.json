@@ -1,6 +1,6 @@
 {
   "name": "profile-pictures-react-bootstrap",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^14.2.0",
     "axios": "^0.27.2",
     "react": "^18.1.0",
-    "react-bootstrap": "^2.3.1",
+    "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
@@ -39,6 +39,6 @@
     ]
   },
   "devDependencies": {
-    "@waline/client": "^2.4.2"
+    "@waline/client": "^2.5.0"
   }
 }
