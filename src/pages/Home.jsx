@@ -179,7 +179,7 @@ function Home(params) {
             </p> : <p className="leftWords"><strong>Hold on please.</strong></p>}
           </div>
           <div style={{ width: "24%", float: "left", }}>
-            <Carousel activeIndex={index} onSelect={handleSelect} variant={index === 0 || index === 1 || index === 2 ? "null" : "dark"} interval={null}>
+            <Carousel activeIndex={index} onSelect={handleSelect} variant="dark" interval={null}>
               {localProfilePictures ? localProfilePictures.map((localProfilePicture) => {
                 return (
                   <Carousel.Item key={localProfilePicture.id}>
