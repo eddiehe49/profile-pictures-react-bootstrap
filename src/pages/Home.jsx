@@ -76,41 +76,6 @@ function Home(params) {
     });
   };
 
-  const getJsonbinProfilePictures = () => {
-    const getProfilePictures = async () => {
-      let result = await Service.getJsonbinProfilePicturesJson()
-      console.log("get jsonbin res: ", result);
-      setLocalProfilePictures(result.data.record.profilePictures)
-      setSvgName("heart")
-      console.log("localProfilePictures: ", localProfilePictures)
-    }
-    getProfilePictures().catch((error) => {
-      setErrorToastShow(true)
-      console.log("get jsonbin error: ", error)
-    });
-  };
-
-  const putJsonbinProfilePictures = () => {
-    // Coould not do (let tempProfilePictures=this.localProfilePictures), as tempProfilePictures will sync with this.localProfilePictures
-    let tempProfilePictures = JSON.stringify(localProfilePictures);
-    let profilePictures = JSON.parse(tempProfilePictures);
-    profilePictures[index].likes += 1;
-    const putProfilePictures = async () => {
-      let result = await Service.putJsonbinProfilePicturesJson({ profilePictures })
-      console.log("put jsonbin result: ", result)
-      localProfilePictures[index].likes += 1
-      setSvgName("heart-fill")
-      setSuccessToastShow(true)
-      setTimeout(() => {
-        setSvgName("heart")
-        console.log("2.5 s passed. Change heart-fill to heart.")
-      }, 2500);
-    }
-    putProfilePictures().catch((error) => {
-      setErrorToastShow(true)
-      console.log("put jsonbin error: ", error)
-    });
-  };
 
   const getKratesProfilePictures = () => {
     const getProfilePictures = async () => {
@@ -153,7 +118,6 @@ function Home(params) {
       setSvgName("arrow-clockwise")
       setVerificationModalShow(false)
       // patchJsonplaceholderProfilePictures()
-      // putJsonbinProfilePictures()
       putKratesProfilePictures()
     }
     else {
@@ -164,7 +128,6 @@ function Home(params) {
   useEffect(() => {
     setSvgName("arrow-clockwise")
     // getJsonplaceholderProfilePictures()
-    // getJsonbinProfilePictures()
     getKratesProfilePictures()
     waline.update()
   }, [])
